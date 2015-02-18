@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                alert("The document is ready");
+                $(".No1").fadeOut(1000);
+                $(".No2").fadeOut(2000);
+                $(".No3").fadeOut(3000);
+                $(".No4").fadeOut(4000);
+                //$(".No5").fadeOut(5000);
+                $(".No1").fadeIn(5000);
+                $(".No2").fadeIn(6000);
+                $(".No3").fadeIn(6000);
+                $(".No4").fadeIn(7000);
+                //$(".No5").fadeIn(7000);
+                
+                //Below is another way of writing the below example
+                /*var animateMenu = function (){
+                    $(".No5").animate( {opacity: .5})
+                }
+                $(".No5").show(animateMenu)*/
+
+                $(".No5").show( function(){
+                    $(".No5").animate({opacity: .5});
+                })
+
+                //Below is the click event!!
+                $(".No1").click(function() {
+                    alert("I'm Clicked, you are going to Google!");
+                });
+            });
+
+        </script>
+
+        <style>
+            h1{
+                text-align: center;
+                font-family: Courier;
+            }
+
+            div{
+                display: inline-block;
+                border: 2px solid black;
+                text-align: center;
+                font-family: Courier;
+                width: 220px;
+                height: 100px;
+                font-size: 30px;
+            }
+
+            .No1{
+                background-color: red;
+            }
+
+            .No2{
+                background-color: orange;
+            }
+
+            .No3{
+                background-color: yellow;
+            }
+
+            .No4{
+                background-color: green;
+            }
+
+            .No5{
+                background-color: blue;
+            }
+
+            a{
+                text-decoration: none;
+                color:black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <script>
+         /* var someOtherFunction = function(){alert('hello world');}
+            function someRunner(anyFunction){console.log(2+2); anyFunction();}
+            someRunner(someOtherFunction);
+            Above and below is the example of Callback */
+
+            var sayHello = function(){
+                alert("Hello!");}
+            function callback(anyFunction){
+                console.log("This is Callback!"); anyFunction();}
+                
+            callback(sayHello);
+ 
+        </script>
+
+        <h1>JQuery Cheatsheet!!</h1>
+        <div class="No1"><a href="http://google.com">Box#1</a></div>
+        <div class="No2"><a href="http://google.com">Box#2</a></div>
+        <div class="No3"><a href="http://google.com">Box#3</a></div>
+        <div class="No4"><a href="http://google.com">Box#4</a></div>
+        <div class="No5"><a href="http://google.com">Box#5</a></div>
+
+    </body>
+</html>
